@@ -14,7 +14,119 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      activities: {
+        Row: {
+          activity_type: string | null
+          created_at: string
+          description: string | null
+          distance: number | null
+          duration: number | null
+          elevation_gain: number | null
+          gpx_url: string | null
+          id: string
+          pace: number | null
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          activity_type?: string | null
+          created_at?: string
+          description?: string | null
+          distance?: number | null
+          duration?: number | null
+          elevation_gain?: number | null
+          gpx_url?: string | null
+          id?: string
+          pace?: number | null
+          title: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          activity_type?: string | null
+          created_at?: string
+          description?: string | null
+          distance?: number | null
+          duration?: number | null
+          elevation_gain?: number | null
+          gpx_url?: string | null
+          id?: string
+          pace?: number | null
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      activity_tags: {
+        Row: {
+          activity_id: string
+          created_at: string
+          id: string
+          tag: string
+        }
+        Insert: {
+          activity_id: string
+          created_at?: string
+          id?: string
+          tag: string
+        }
+        Update: {
+          activity_id?: string
+          created_at?: string
+          id?: string
+          tag?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "activity_tags_activity_id_fkey"
+            columns: ["activity_id"]
+            isOneToOne: false
+            referencedRelation: "activities"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          age: number | null
+          avatar_url: string | null
+          created_at: string
+          goal: string | null
+          id: string
+          name: string | null
+          resting_hr: number | null
+          updated_at: string
+          user_id: string
+          weight: number | null
+        }
+        Insert: {
+          age?: number | null
+          avatar_url?: string | null
+          created_at?: string
+          goal?: string | null
+          id?: string
+          name?: string | null
+          resting_hr?: number | null
+          updated_at?: string
+          user_id: string
+          weight?: number | null
+        }
+        Update: {
+          age?: number | null
+          avatar_url?: string | null
+          created_at?: string
+          goal?: string | null
+          id?: string
+          name?: string | null
+          resting_hr?: number | null
+          updated_at?: string
+          user_id?: string
+          weight?: number | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
