@@ -1,6 +1,6 @@
-import { Navbar } from "@/components/ui/navbar";
-import { HeroSection } from "@/components/hero-section";
-import { StatsOverview } from "@/components/stats-overview";
+import Navbar from "@/components/ui/navbar";
+import HeroSection from "@/components/hero-section";
+import StatsOverview from "@/components/stats-overview";
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
